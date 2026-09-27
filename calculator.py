@@ -18,6 +18,11 @@ def subtraction(a, b):
     return a - b
 
 
+def multiplication(a, b):
+    """Perform multiplication of two numbers."""
+    return a * b
+
+
 def calculator():
     while True:
         show_menu()
