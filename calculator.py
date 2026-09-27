@@ -48,7 +48,13 @@ def calculator():
                 print("Error: Invalid input. Please enter numbers.")
 
         elif choice == "3":
-            print("Multiplication feature will be added.")
+            try:
+                a = float(input("Enter first number: "))
+                b = float(input("Enter second number: "))
+                result = multiplication(a, b)
+                print("Multiplication Result:", result)
+            except ValueError:
+                print("Error: Invalid input. Please enter numbers.")
 
         elif choice == "4":
             print("Division feature will be added.")
