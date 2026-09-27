@@ -7,6 +7,9 @@ def show_menu():
     print("5. PEMDAS Expression")
     print("6. Exit")
 
+def addition(a, b):
+    """Perform addition of two numbers."""
+    return a + b
 
 def calculator():
     while True:
