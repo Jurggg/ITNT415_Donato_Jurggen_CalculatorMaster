@@ -13,6 +13,11 @@ def addition(a, b):
     return a + b
 
 
+def subtraction(a, b):
+    """Perform subtraction of two numbers."""
+    return a - b
+
+
 def calculator():
     while True:
         show_menu()
