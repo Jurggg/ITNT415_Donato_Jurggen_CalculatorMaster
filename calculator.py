@@ -8,6 +8,11 @@ def show_menu():
     print("6. Exit")
 
 
+def addition(a, b):
+    """Perform addition of two numbers."""
+    return a + b
+
+
 def calculator():
     while True:
         show_menu()
@@ -15,7 +20,13 @@ def calculator():
         choice = input("Enter your choice (1-6): ")
 
         if choice == "1":
-            print("Addition feature will be added.")
+            try:
+                a = float(input("Enter first number: "))
+                b = float(input("Enter second number: "))
+                result = addition(a, b)
+                print("Addition Result:", result)
+            except ValueError:
+                print("Error: Invalid input. Please enter numbers.")
 
         elif choice == "2":
             print("Subtraction feature will be added.")
