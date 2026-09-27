@@ -10,7 +10,7 @@
 
 ## Project Description
 
-Calculator Master is a menu-driven Python calculator developed using Python, Git, and GitHub. The project demonstrates Python programming, Git branching, source code management, Pull Requests, code review, approval, and merge operations.
+Calculator Master is a menu-driven Python calculator developed using Python, Git, and GitHub. The project demonstrates Python programming, Git branching, source code management, Pull Requests, code review, approval, merge operations, input validation, error handling, and PEMDAS expression evaluation.
 
 ## Branch Structure
 
@@ -26,6 +26,9 @@ Calculator Master is a menu-driven Python calculator developed using Python, Git
 - Subtraction
 - Multiplication
 - Division
+- PEMDAS expression evaluation
+- Parentheses
+- Exponents
 - Menu-driven interface
 - Continuous execution until exit
 - User input validation
@@ -36,6 +39,23 @@ Calculator Master is a menu-driven Python calculator developed using Python, Git
 - Code review
 - Branch merging
 
+## PEMDAS Support
+
+The calculator supports arithmetic expressions using:
+
+- Parentheses
+- Exponents
+- Multiplication
+- Division
+- Addition
+- Subtraction
+
+Examples:
+
+    2 + 3 * 4
+    (2 + 3) * 4
+    2 + 3 * 4 ** 2
+
 ## Sample Execution
 
 Example:
@@ -45,17 +65,17 @@ Example:
     2. Subtraction
     3. Multiplication
     4. Division
-    5. Exit
+    5. PEMDAS Expression
+    6. Exit
 
-    Enter your choice (1-5): 1
-    Enter first number: 10
-    Enter second number: 5
-    Addition Result: 15.0
+    Enter your choice (1-6): 5
+    Enter expression: 2 + 3 * 4
+    PEMDAS Result: 14
+
+## Sample Execution Screenshot
+
+The final repository will contain a screenshot demonstrating the calculator.
 
 ## Version Control
 
-Each calculator operation is developed using a separate Git feature branch. Each feature branch contains at least two meaningful commits. Pull Requests are created for each feature and merged into the main branch after review and approval.
-
-## Academic Integrity
-
-All source code, commits, branch activities, and Pull Requests are individually developed for this project.
+Each major calculator operation is developed using a separate Git feature branch. Each feature branch contains at least two meaningful commits. Pull Requests are created for each feature and merged into the main branch after review and approval.

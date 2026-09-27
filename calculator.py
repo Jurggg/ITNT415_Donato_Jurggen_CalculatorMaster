@@ -4,14 +4,15 @@ def show_menu():
     print("2. Subtraction")
     print("3. Multiplication")
     print("4. Division")
-    print("5. Exit")
+    print("5. PEMDAS Expression")
+    print("6. Exit")
 
 
 def calculator():
     while True:
         show_menu()
 
-        choice = input("Enter your choice (1-5): ")
+        choice = input("Enter your choice (1-6): ")
 
         if choice == "1":
             print("Addition feature will be added.")
@@ -26,11 +27,14 @@ def calculator():
             print("Division feature will be added.")
 
         elif choice == "5":
+            print("PEMDAS feature will be added.")
+
+        elif choice == "6":
             print("Thank you for using Calculator Master!")
             break
 
         else:
-            print("Error: Invalid menu choice. Please select 1-5.")
+            print("Error: Invalid menu choice. Please select 1-6.")
 
 
 if __name__ == "__main__":
