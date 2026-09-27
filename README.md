@@ -74,7 +74,8 @@ Example:
 
 ## Sample Execution Screenshot
 
-The final repository will contain a screenshot demonstrating the calculator.
+<img width="606" height="441" alt="image" src="https://github.com/user-attachments/assets/07162029-d4ad-40bd-93fe-a79cb9874060" />
+
 
 ## Version Control
 
