@@ -1,3 +1,7 @@
+import ast
+import operator
+
+
 def show_menu():
     print("\n===== CALCULATOR MASTER =====")
     print("1. Addition")
@@ -28,6 +32,54 @@ def division(a, b):
     if b == 0:
         return "Error: Cannot divide by zero."
     return a / b
+
+
+def evaluate_expression(expression):
+    """Evaluate an arithmetic expression using PEMDAS."""
+
+    allowed_operators = {
+        ast.Add: operator.add,
+        ast.Sub: operator.sub,
+        ast.Mult: operator.mul,
+        ast.Div: operator.truediv,
+        ast.Pow: operator.pow,
+        ast.USub: operator.neg,
+        ast.UAdd: operator.pos
+    }
+
+    def calculate(node):
+        if isinstance(node, ast.Constant):
+            if isinstance(node.value, (int, float)):
+                return node.value
+            raise ValueError("Invalid value.")
+
+        if isinstance(node, ast.BinOp):
+            operator_function = allowed_operators.get(type(node.op))
+
+            if operator_function is None:
+                raise ValueError("Invalid operator.")
+
+            left = calculate(node.left)
+            right = calculate(node.right)
+
+            if isinstance(node.op, ast.Div) and right == 0:
+                raise ZeroDivisionError
+
+            return operator_function(left, right)
+
+        if isinstance(node, ast.UnaryOp):
+            operator_function = allowed_operators.get(type(node.op))
+
+            if operator_function is None:
+                raise ValueError("Invalid operator.")
+
+            return operator_function(calculate(node.operand))
+
+        raise ValueError("Invalid expression.")
+
+    tree = ast.parse(expression, mode="eval")
+
+    return calculate(tree.body)
 
 
 def calculator():
@@ -78,7 +130,19 @@ def calculator():
                 print("Error: Invalid input. Please enter numbers.")
 
         elif choice == "5":
-            print("PEMDAS feature will be added.")
+            expression = input(
+                "Enter expression (example: 2 + 3 * 4): "
+            )
+
+            try:
+                result = evaluate_expression(expression)
+                print("PEMDAS Result:", result)
+
+            except ZeroDivisionError:
+                print("Error: Cannot divide by zero.")
+
+            except (ValueError, SyntaxError):
+                print("Error: Invalid expression.")
 
         elif choice == "6":
             print("Thank you for using Calculator Master!")
